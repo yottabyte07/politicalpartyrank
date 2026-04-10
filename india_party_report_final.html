@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Political Party Evaluation Report 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root{
+  --bg:#080d14;
+  --surface:#0e1520;
+  --surface2:#131c2b;
+  --surface3:#182235;
+  --border:#1e2d42;
+  --border2:#243346;
+  --text:#d4e2f4;
+  --text2:#7a93b4;
+  --text3:#4a6380;
+  --accent:#4f9eff;
+  --accent2:#7c5fff;
+  --green:#22d98a;
+  --green2:#0f7a4d;
+  --amber:#ffb347;
+  --amber2:#7a4d0f;
+  --red:#ff5b6b;
+  --red2:#7a1020;
+  --gold:#ffd166;
+  --silver:#b0c4d8;
+  --bronze:#c8956a;
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:var(--surface);}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:#2e4460;}
+
+/* ── HEADER ── */
+.header{
+  background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 40%,#0f1a30 70%,#0a1020 100%);
+  padding:36px 32px 28px;
+  border-bottom:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.header::before{
+  content:'';position:absolute;top:-60px;right:-80px;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(79,158,255,.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.header::after{
+  content:'';position:absolute;bottom:-80px;left:10%;
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(124,95,255,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.header-inner{max-width:960px;margin:0 auto;position:relative;z-index:1;}
+.report-label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:0.67rem;text-transform:uppercase;letter-spacing:2.5px;
+  color:var(--accent);margin-bottom:12px;
+  background:rgba(79,158,255,.1);border:1px solid rgba(79,158,255,.2);
+  padding:3px 10px;border-radius:20px;
+}
+.header h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.75rem;font-weight:700;color:#e8f2ff;line-height:1.3;
+  background:linear-gradient(135deg,#e8f2ff 0%,#a0c4f8 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.header .subtitle{color:var(--text2);margin-top:10px;font-size:0.83rem;line-height:1.7;max-width:820px;}
+.header .meta{
+  display:flex;gap:0;flex-wrap:wrap;margin-top:20px;
+  border-top:1px solid var(--border);padding-top:16px;
+}
+.header .meta span{
+  font-size:0.73rem;color:var(--text2);
+  padding:4px 18px 4px 0;margin-right:18px;
+  border-right:1px solid var(--border2);
+}
+.header .meta span:last-child{border-right:none;}
+.header .meta span strong{color:var(--text);font-weight:600;}
+
+/* ── TABS ── */
+.tabs{
+  display:flex;gap:0;padding:0 24px;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  overflow-x:auto;
+}
+.tabs::-webkit-scrollbar{height:0;}
+.tab{
+  padding:13px 20px;cursor:pointer;font-size:0.78rem;font-weight:600;
+  transition:all .2s;white-space:nowrap;color:var(--text2);
+  border-bottom:2px solid transparent;letter-spacing:.3px;
+}
+.tab.active{color:#e8f2ff;border-bottom-color:var(--accent);}
+.tab:hover:not(.active){color:var(--text);background:rgba(255,255,255,.03);}
+
+/* ── CONTENT ── */
+.content{display:none;padding:28px 24px;max-width:1140px;margin:0 auto;}
+.content.active{display:block;}
+
+/* ── SECTION HEADINGS ── */
+.section-heading{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.68rem;text-transform:uppercase;letter-spacing:2px;
+  color:var(--accent);margin-bottom:16px;padding-bottom:8px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+}
+.section-heading::before{
+  content:'';display:block;width:3px;height:14px;
+  background:linear-gradient(180deg,var(--accent),var(--accent2));
+  border-radius:2px;
+}
+.section-subtext{font-size:0.8rem;color:var(--text2);line-height:1.7;margin-bottom:20px;}
+
+/* ── METRIC LEGEND ── */
+.metric-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-bottom:24px;}
+.metric-item{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--r-md);padding:12px 14px;
+  display:flex;align-items:flex-start;gap:12px;
+  transition:border-color .2s,transform .2s;
+}
+.metric-item:hover{border-color:var(--border2);transform:translateY(-1px);}
+.metric-item .mi-weight{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  min-width:34px;line-height:1;margin-top:2px;
+}
+.metric-item .mi-name{font-size:0.74rem;font-weight:600;color:var(--text);}
+.metric-item .mi-desc{font-size:0.67rem;color:var(--text2);margin-top:3px;line-height:1.45;}
+
+/* ── TABLES ── */
+.table-wrap{overflow-x:auto;border-radius:var(--r-lg);border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.3);}
+.rank-table{width:100%;border-collapse:collapse;}
+.rank-table th{
+  background:var(--surface2);color:var(--text3);
+  padding:11px 13px;text-align:left;font-size:0.67rem;
+  text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--border);
+  white-space:nowrap;font-weight:600;
+}
+.rank-table td{
+  padding:10px 13px;border-bottom:1px solid var(--border);
+  font-size:0.8rem;vertical-align:middle;
+  transition:background .15s;
+}
+.rank-table tbody tr:last-child td{border-bottom:none;}
+.rank-table tr:hover td{background:rgba(79,158,255,.04);}
+.rank-table tr.top-row td{background:rgba(34,217,138,.04);}
+.rank-table tr.top-row:hover td{background:rgba(34,217,138,.08);}
+
+/* ── RANK BADGES ── */
+.rank-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:50%;
+  font-weight:700;font-size:0.76rem;
+  box-shadow:0 2px 8px rgba(0,0,0,.4);
+}
+.rank-1{background:linear-gradient(135deg,#ffd166,#ff9a3c);color:#1a0800;box-shadow:0 2px 12px rgba(255,180,50,.35);}
+.rank-2{background:linear-gradient(135deg,#c8d8e8,#8aa8c4);color:#0a1520;box-shadow:0 2px 12px rgba(180,200,220,.25);}
+.rank-3{background:linear-gradient(135deg,#c8956a,#8a5030);color:#fff;box-shadow:0 2px 12px rgba(180,120,80,.25);}
+.rank-other{background:var(--surface3);color:var(--text3);border:1px solid var(--border);}
+
+/* ── SCORE BARS ── */
+.score-bar{display:flex;align-items:center;gap:8px;}
+.bar-bg{
+  flex:1;height:7px;
+  background:var(--surface3);
+  border-radius:4px;overflow:hidden;min-width:60px;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.3);
+}
+.bar-fill{height:100%;border-radius:4px;position:relative;}
+.bar-fill::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(90deg,rgba(255,255,255,.15),transparent);
+  border-radius:4px;
+}
+.score-num{font-weight:700;font-size:0.82rem;min-width:32px;text-align:right;font-variant-numeric:tabular-nums;}
+
+/* ── PARTY TYPE PILLS ── */
+.party-type{font-size:0.61rem;padding:3px 8px;border-radius:20px;font-weight:600;white-space:nowrap;letter-spacing:.3px;}
+.national{background:rgba(79,158,255,.12);color:var(--accent);border:1px solid rgba(79,158,255,.25);}
+.state{background:rgba(34,217,138,.1);color:var(--green);border:1px solid rgba(34,217,138,.2);}
+
+/* ── DETAIL CARDS ── */
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+.party-card{
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:16px;cursor:pointer;
+  transition:all .25s;position:relative;overflow:hidden;
+}
+.party-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  opacity:0;transition:opacity .25s;
+}
+.party-card:hover{border-color:var(--border2);box-shadow:0 8px 32px rgba(79,158,255,.08);transform:translateY(-2px);}
+.party-card:hover::before{opacity:1;}
+.party-card.expanded{border-color:var(--accent);box-shadow:0 0 0 1px rgba(79,158,255,.2);}
+.party-card.expanded::before{opacity:1;}
+.party-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:8px;}
+.party-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.88rem;color:var(--text);line-height:1.3;}
+.party-meta{font-size:0.64rem;color:var(--text3);margin-top:3px;display:flex;flex-wrap:wrap;gap:6px;}
+.party-meta-chip{background:var(--surface3);border:1px solid var(--border);border-radius:10px;padding:1px 7px;}
+.overall-score{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.4rem;font-weight:700;flex-shrink:0;line-height:1;
+}
+
+/* ── MINI BARS ── */
+.mini-bars{margin-top:8px;}
+.mini-bar-row{display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+.mini-bar-label{font-size:0.61rem;color:var(--text2);width:78px;flex-shrink:0;}
+.mini-bar-bg{
+  flex:1;height:5px;
+  background:var(--surface3);border-radius:3px;overflow:hidden;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.2);
+}
+.mini-bar-fill{height:100%;border-radius:3px;}
+.mini-bar-val{font-size:0.62rem;font-weight:600;width:22px;text-align:right;}
+
+/* ── EXPAND SECTION ── */
+.expand-section{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);}
+.expand-section.show{display:block;}
+.expand-section p{font-size:0.75rem;color:var(--text2);line-height:1.7;margin-bottom:10px;}
+.tag{display:inline-block;border-radius:6px;padding:3px 8px;font-size:0.65rem;margin:2px;font-weight:500;}
+.tag.pos{background:rgba(34,217,138,.1);color:var(--green);border:1px solid rgba(34,217,138,.18);}
+.tag.neg{background:rgba(255,91,107,.1);color:var(--red);border:1px solid rgba(255,91,107,.18);}
+
+/* ── FILTER BAR ── */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.filter-btn{
+  padding:6px 16px;border-radius:20px;
+  border:1px solid var(--border);
+  background:var(--surface2);color:var(--text2);
+  cursor:pointer;font-size:0.74rem;transition:all .2s;font-weight:500;
+}
+.filter-btn:hover{border-color:var(--border2);color:var(--text);}
+.filter-btn.active{
+  background:linear-gradient(135deg,rgba(79,158,255,.2),rgba(124,95,255,.2));
+  border-color:var(--accent);color:#e8f2ff;font-weight:600;
+  box-shadow:0 0 12px rgba(79,158,255,.15);
+}
+
+/* ── BOND BARS ── */
+.bond-row{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+.bond-party{font-size:0.76rem;font-weight:600;color:var(--text);width:80px;flex-shrink:0;}
+.bond-bg{flex:1;height:11px;background:var(--surface3);border-radius:6px;overflow:hidden;box-shadow:inset 0 1px 3px rgba(0,0,0,.3);}
+.bond-fill{height:100%;border-radius:6px;position:relative;}
+.bond-fill::after{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:rgba(255,255,255,.1);border-radius:6px 6px 0 0;}
+.bond-val{font-size:0.73rem;font-weight:600;min-width:110px;color:var(--text2);}
+
+/* ── NOTE BOX ── */
+.note-box{
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-left:3px solid var(--accent);
+  border-radius:var(--r-md);
+  padding:16px 18px;font-size:0.77rem;
+  color:var(--text2);line-height:1.75;margin-bottom:20px;
+}
+.note-box strong{color:var(--text);font-weight:600;}
+
+/* ── TWO-COL & INFO BOXES ── */
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:16px;}
+.info-box{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--r-md);padding:16px;
+  transition:border-color .2s;
+}
+.info-box:hover{border-color:var(--border2);}
+.info-box h4{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.79rem;font-weight:700;color:var(--text);
+  margin-bottom:8px;display:flex;align-items:center;gap:6px;
+}
+.info-box h4::before{content:'';display:block;width:3px;height:12px;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:2px;flex-shrink:0;}
+.info-box p{font-size:0.75rem;color:var(--text2);line-height:1.7;}
+
+/* ── METHODOLOGY BOX ── */
+.meth-box{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-md);padding:18px;margin-bottom:14px;}
+.meth-box h4{font-family:'Space Grotesk',sans-serif;font-size:0.84rem;font-weight:700;color:var(--text);margin-bottom:12px;}
+.meth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:6px;}
+.meth-item{font-size:0.76rem;color:var(--text2);padding:5px 0;}
+.meth-item strong{color:var(--text);}
+.meth-box ul{padding-left:16px;}
+.meth-box li{font-size:0.77rem;color:var(--text2);line-height:2.1;}
+.meth-box li strong{color:var(--text);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .header{padding:24px 18px 20px;}
+  .header h1{font-size:1.3rem;}
+  .metric-legend{grid-template-columns:1fr 1fr;}
+  .header .meta span{border-right:none;padding-right:0;margin-right:0;width:100%;}
+  .content{padding:20px 14px;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="report-label">Independent Research Report &nbsp;·&nbsp; April 2026</div>
+    <h1>Evaluation of ECI-Recognized Political Parties in India<br>Based on Governance, Integrity, and People-Centric Metrics</h1>
+    <div class="subtitle">A data-driven assessment of all Election Commission of India recognized parties across eleven weighted dimensions — including a newly introduced People-First Index that evaluates party alignment with public interest over corporate interest, natural resource stewardship, and rights-based governance.</div>
+    <div class="meta">
+      <span><strong>Reference Period</strong> 2014–2026</span>
+      <span><strong>Data Sources</strong> ADR India · ECI · BTI 2026 · NITI Aayog · Al Jazeera · NTK Manifesto 2026</span>
+      <span><strong>Parties Evaluated</strong> 6 National · 16 State</span>
+      <span><strong>Methodology</strong> 11 Weighted Metrics · People-First Index</span>
+    </div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('peoplefirst',this)">People-First Index</div>
+  <div class="tab" onclick="showTab('overview',this)">Overall Rankings</div>
+  <div class="tab" onclick="showTab('national',this)">National Parties</div>
+  <div class="tab" onclick="showTab('state',this)">State Parties</div>
+  <div class="tab" onclick="showTab('bonds',this)">Corporate Funding</div>
+  <div class="tab" onclick="showTab('methodology',this)">Methodology</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PEOPLE-FIRST TAB -->
+<div id="peoplefirst" class="content active">
+
+  <div class="section-heading">People-First Index — Framework &amp; Rankings</div>
+
+  <div class="note-box">
+    The People-First Index is an independent dimension introduced in this report to evaluate parties on criteria that are often absent from purely electoral analyses. The index measures the degree to which a party's ideology, funding sources, policy record, and public positions align with the interests of ordinary citizens — as opposed to corporate benefactors, resource extractors, or transient electoral incentives. A party that advocates free education as a structural right scores higher than one that announces cash transfers before elections. A party that leads protests against illegal sand mining scores higher than one whose state governments have documented sand mafia links. A party that received zero corporate bond funding scores higher than one that encashed hundreds of crores from raided companies.
+    <br><br>
+    <strong>Six sub-metrics</strong> constitute this index: Anti-Corporate Capture (20%), Natural Resource Protection (18%), Fundamental Rights Approach (20%), Farmer and Labour First (17%), Ecological Sustainability (15%), and Rights-vs-Freebies (10%). Each is scored out of its maximum weight and aggregated to a score out of 100.
+  </div>
+
+  <!-- Sub-metric legend -->
+  <div class="metric-legend">
+    <div class="metric-item"><div class="mi-weight">20%</div><div><div class="mi-name">Anti-Corporate Capture</div><div class="mi-desc">Party funding transparency; opposition to privatisation of public assets; no documented quid-pro-quo with corporate donors</div></div></div>
+    <div class="metric-item"><div class="mi-weight">18%</div><div><div class="mi-name">Natural Resource Protection</div><div class="mi-desc">Stance against illegal sand mining, river destruction, forest clearance, and corporate land acquisition; water rights advocacy</div></div></div>
+    <div class="metric-item"><div class="mi-weight">20%</div><div><div class="mi-name">Fundamental Rights Approach</div><div class="mi-desc">Advocates free education, healthcare, and water as constitutional rights — not seasonal pre-election transfers</div></div></div>
+    <div class="metric-item"><div class="mi-weight">17%</div><div><div class="mi-name">Farmer and Labour First</div><div class="mi-desc">Protects farmer income and land rights; supports labour unions; opposed exploitative farm legislation</div></div></div>
+    <div class="metric-item"><div class="mi-weight">15%</div><div><div class="mi-name">Ecological Sustainability</div><div class="mi-desc">Policy record on clean energy, water body restoration, pollution control, and anti-extraction development models</div></div></div>
+    <div class="metric-item"><div class="mi-weight">10%</div><div><div class="mi-name">Rights vs Freebies</div><div class="mi-desc">Structural entitlement frameworks score higher than populist cash handouts designed for short-term electoral gains</div></div></div>
+  </div>
+
+  <div class="section-heading" style="margin-top:4px;">State Parties — People-First Ranking</div>
+  <div class="table-wrap">
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th>Rank</th><th>Party</th>
+          <th>Anti-Corporate /20</th><th>Nature Protection /18</th>
+          <th>Rights Approach /20</th><th>Farmer-Labour /17</th>
+          <th>Ecology /15</th><th>Rights vs Freebie /10</th>
+          <th>Index Score</th>
+        </tr>
+      </thead>
+      <tbody id="pfStateBody"></tbody>
+    </table>
+  </div>
+
+  <div class="section-heading" style="margin-top:22px;">National Parties — People-First Ranking</div>
+  <div class="table-wrap">
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th>Rank</th><th>Party</th>
+          <th>Anti-Corporate /20</th><th>Nature Protection /18</th>
+          <th>Rights Approach /20</th><th>Farmer-Labour /17</th>
+          <th>Ecology /15</th><th>Rights vs Freebie /10</th>
+          <th>Index Score</th>
+        </tr>
+      </thead>
+      <tbody id="pfNationalBody"></tbody>
+    </table>
+  </div>
+
+  <div class="two-col" style="margin-top:22px;">
+    <div class="info-box">
+      <h4>Corporate Funding and People-First Alignment</h4>
+      <p>The electoral bond data released by the ECI following the Supreme Court's February 2024 ruling reveals a clear inverse relationship between corporate bond receipts and people-first policy positions. Parties that received the largest volumes of corporate funding — BJP (₹6,060 cr), BRS (₹1,806 cr), TMC (₹1,609 cr), and INC (₹1,422 cr) — each show weaker scores on the Anti-Corporate Capture dimension. Parties with zero recorded bond receipts — including NTK, CPI(M), JMM, NPF, AAP, and NPP — correspondingly score higher on this sub-metric. The Supreme Court explicitly noted that the scheme created conditions for quid-pro-quo arrangements between political parties and corporations.</p>
+    </div>
+    <div class="info-box">
+      <h4>Rights-Based vs Freebie-Based Welfare</h4>
+      <p>A central distinction in this index is between structural entitlements and pre-election transfers. Structural welfare — such as the Right to Education Act (INC, 2009), NTK's manifesto proposal to make free education from primary to PhD a constitutional right, or CPI(M)'s public health infrastructure in Kerala — embeds rights into law and administration. By contrast, cash transfers and goods distributed weeks before election schedules, with no institutional framework, constitute electoral inducements. Parties whose welfare commitments are predominantly of the structural variety score higher on the Rights vs Freebies sub-metric regardless of whether they are in power or in opposition.</p>
+    </div>
+    <div class="info-box">
+      <h4>Natural Resource Stewardship</h4>
+      <p>India's sand mafia problem — documented across Andhra Pradesh, Tamil Nadu, Bihar, Uttar Pradesh, and Karnataka — consistently implicates governing parties. Research shows that sand mafias operate through networks involving politicians, bureaucrats, and enforcement agencies. Parties whose state governments have documented sand mafia links, or that enabled large-scale river mining under their tenure, score lower on Natural Resource Protection. Parties that have led active public protests against sand mining, opposed highway projects on ecological grounds, or passed legislative resolutions against deep-sea mining privatisation score higher.</p>
+    </div>
+    <div class="info-box">
+      <h4>Emerging Parties and the Governance Penalty</h4>
+      <p>Parties that have never held legislative seats face an inherent disadvantage in the Overall Rankings because governance delivery (18% weight) requires a track record of implementation. However, the People-First Index is intentionally designed to be agnostic to incumbency — it rewards ideological consistency, funding integrity, and policy positioning irrespective of whether a party has governed. This design choice allows the index to fairly evaluate parties like NTK, which has a 15-year record of consistent ideological positions and protest-based advocacy, even in the absence of electoral victories.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ OVERALL TAB -->
+<div id="overview" class="content">
+  <div class="section-heading">Overall Party Rankings — All Metrics Combined</div>
+  <div class="note-box">
+    The overall score aggregates eleven weighted metrics. Governance and Policy delivery carries the highest weight (18%) and directly disadvantages parties that have not held power. The People-First Index contributes 10% to the overall score. Criminal record percentage and party-hopping are penalty metrics. No party is scored to a predetermined outcome — all scores derive from verifiable public data.
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterTable('all',this)">All Parties</button>
+    <button class="filter-btn" onclick="filterTable('national',this)">National Parties</button>
+    <button class="filter-btn" onclick="filterTable('state',this)">State Parties</button>
+  </div>
+  <div class="table-wrap">
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th>Rank</th><th>Party</th><th>Type</th>
+          <th>Overall /100</th><th>People-First /100</th>
+          <th>Criminal %</th><th>Defection Risk</th><th>Assessment</th>
+        </tr>
+      </thead>
+      <tbody id="rankTableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ NATIONAL TAB -->
+<div id="national" class="content">
+  <div class="section-heading">National Parties — Detailed Scorecard</div>
+  <div class="section-subtext">Six metrics shown per card. Click any card to expand the full assessment, including key strengths and concerns identified from public data.</div>
+  <div class="detail-grid" id="nationalCards"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ STATE TAB -->
+<div id="state" class="content">
+  <div class="section-heading">State Parties — Detailed Scorecard</div>
+  <div class="section-subtext">Parties ranked by overall score within their recognized states. Click any card to expand the full assessment.</div>
+  <div class="detail-grid" id="stateCards"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ BONDS TAB -->
+<div id="bonds" class="content">
+  <div class="section-heading">Electoral Bond Receipts by Party — 2019 to 2024</div>
+  <div class="note-box">
+    Data sourced from the Election Commission of India's disclosure following the Supreme Court's February 2024 order declaring the Electoral Bond Scheme unconstitutional. The court found the scheme "violative of voters' right to information" and noted it created conditions for quid-pro-quo arrangements. Of the total ₹12,769 crore encashed, 96.91% came from corporate entities. Eight of the ten largest bond recipients were ruling parties in at least one state at the time of receipt. Parties listed at zero received no recorded electoral bond funding during the scheme's operation.
+  </div>
+  <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px;margin-bottom:16px;">
+    <div id="bondBars"></div>
+  </div>
+  <div class="two-col">
+    <div class="info-box">
+      <h4>Pattern: Raids, Donations, and Case Closures</h4>
+      <p>Research published in Humanities and Social Sciences Communications (Nature, 2025) identified three documented corruption patterns in the electoral bond data: companies donating to the ruling party after being raided by central agencies; companies receiving government contracts shortly before or after large donations; and newly incorporated companies making substantial donations without commensurate declared revenues. BJP, as the central governing party with control over investigative agencies, appears most frequently in these patterns, though similar dynamics are documented for state ruling parties including BRS, TMC, and BJD.</p>
+    </div>
+    <div class="info-box">
+      <h4>Parties with Zero Bond Receipts</h4>
+      <p>The following recognized parties have no recorded electoral bond funding: Naam Tamilar Katchi (NTK), CPI(M), Jharkhand Mukti Morcha (JMM), Naga People's Front (NPF), Aam Aadmi Party (AAP), National People's Party (NPP), Bahujan Samaj Party (BSP), Rashtriya Janata Dal (RJD), Janata Dal (Secular), Shiromani Akali Dal, AIMIM, and Samajwadi Party. Zero receipts may reflect ideological rejection of the scheme, lack of corporate interest in funding smaller parties, or both. NTK's 2026 manifesto explicitly supports the Supreme Court's ruling against electoral bonds as a matter of party policy.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ METHODOLOGY TAB -->
+<div id="methodology" class="content">
+  <div style="max-width:760px;">
+    <div class="section-heading">Methodology and Scoring Framework</div>
+
+    <div class="note-box" style="margin-bottom:20px;">
+      This report uses a weighted multi-metric scoring model applied uniformly to all ECI-recognized parties. Scores are derived from publicly available data. No party was assigned a score to achieve a predetermined ranking outcome. Where data is limited (particularly for smaller regional parties), scores reflect the best available information and are noted conservatively.
+    </div>
+
+    <div class="meth-box">
+      <h4>Overall Score — Eleven Metrics</h4>
+      <div class="meth-grid">
+        <div class="meth-item">Governance &amp; Policy Delivery <strong>18%</strong></div>
+        <div class="meth-item" style="color:var(--green);">People-First Index <strong style="color:var(--green);">10%</strong></div>
+        <div class="meth-item">Transparency &amp; Integrity <strong>13%</strong></div>
+        <div class="meth-item">Criminal Record (penalty) <strong>11%</strong></div>
+        <div class="meth-item">Electoral Performance <strong>10%</strong></div>
+        <div class="meth-item">Leadership Quality <strong>10%</strong></div>
+        <div class="meth-item">No Party Hopping <strong>8%</strong></div>
+        <div class="meth-item">Ideology &amp; Organisation <strong>8%</strong></div>
+        <div class="meth-item">Representation &amp; Inclusion <strong>7%</strong></div>
+        <div class="meth-item">Manifesto Quality <strong>3%</strong></div>
+        <div class="meth-item">Digital Communication <strong>2%</strong></div>
+      </div>
+    </div>
+
+    <div class="meth-box">
+      <h4>Key Scoring Rules</h4>
+      <ul>
+        <li>Criminal record score = 10 × (1 − declared_criminal_pct / 100). Source: ADR India affidavit analysis.</li>
+        <li>Electoral bond receipts are deducted from the Anti-Corporate sub-metric on a logarithmic scale.</li>
+        <li>Multiple documented party switches reduce No Hopping score to 2–3/10. Zero alliances = 9.5/10.</li>
+        <li>Parties with no governance record score 2.5/10 on Governance (18% weight), materially capping their overall total.</li>
+        <li>Rights-based welfare (embedded in legislation) scores 8–9/10 on Rights vs Freebies. Cash transfers before elections score 4–5/10.</li>
+        <li>Sand mining or resource plunder allegations during a party's tenure reduce Nature Protection scores.</li>
+      </ul>
+    </div>
+
+    <div class="meth-box">
+      <h4>Primary Data Sources</h4>
+      <ul>
+        <li><strong>Association for Democratic Reforms (ADR India)</strong> — Criminal background analysis, party defection reports</li>
+        <li><strong>Election Commission of India (ECI)</strong> — Electoral bond disclosures, party recognition status, seat data</li>
+        <li><strong>BTI Transformation Index 2026</strong> — Governance quality, democratic backsliding assessment</li>
+        <li><strong>NITI Aayog</strong> — SDG India Index, Fiscal Health Index, HDI state comparisons</li>
+        <li><strong>Al Jazeera Electoral Bond Investigation (2024, 2026)</strong> — Quid-pro-quo corporate funding patterns</li>
+        <li><strong>NTK Election Manifesto 2026</strong> — 462-page policy document released March 2026</li>
+        <li><strong>Humanities and Social Sciences Communications (Nature, 2025)</strong> — Electoral bond corruption patterns</li>
+        <li><strong>Wikipedia, The Hindu, The Print, South First, PRS India</strong> — Party histories and governance records</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────────────
+const parties = [
+  {name:"Communist Party of India (Marxist)",abbr:"CPI(M)",type:"national",
+   scores:{governance:8.2,peoplefirst:8.8,transparency:7.8,criminal:7.8,electoral:6.0,leadership:7.5,hopping:8.5,ideology:7.8,representation:7.2,manifesto:7.0,digital:5.5},
+   pf:{corp:18,nature:16,rights:18,farmer:16,ecology:14,rfreebie:8},
+   criminalPct:22,hoppingRisk:"Low",bondsCr:0,
+   notes:"Kerala under LDF/CPI(M) consistently leads India's SDG Index (NITI Aayog) and carries an HDI of 0.782 — comparable to Eastern European nations. The party passed a formal Congress resolution opposing deep-sea mining privatisation, and maintains an ideological commitment to public sector primacy. Zero electoral bond funding recorded. Fiscal weakness: Kerala ranked 15th in NITI Aayog's Fiscal Health Index 2026 with a revenue deficit of 1.58% of GSDP. Quarry permit irregularities documented in Kerala.",
+   pros:["Kerala leads SDG Index and HDI nationally","Formal opposition to deep-sea mining privatisation","Zero electoral bond funding","Low criminal candidate percentage (22%)","Consistent anti-privatisation stance"],
+   cons:["Kerala fiscal deficit at 1.58% of GSDP (FHI 2026)","Quarry irregularities within Kerala","Shrinking national electoral footprint","Leadership generational renewal overdue"]},
+
+  {name:"Bharatiya Janata Party",abbr:"BJP",type:"national",
+   scores:{governance:7.8,peoplefirst:3.5,transparency:4.5,criminal:5.5,electoral:9.5,leadership:7.5,hopping:3.5,ideology:7.0,representation:5.5,manifesto:7.5,digital:9.5},
+   pf:{corp:3,nature:4,rights:5,farmer:4,ecology:4,rfreebie:5},
+   criminalPct:39,hoppingRisk:"Very High",bondsCr:6060,
+   notes:"BJP received ₹6,060 crore in electoral bonds — 47.5% of the total scheme. Multiple documented quid-pro-quo patterns: companies raided by ED/CBI subsequently donated to the party. India's GDP per capita rose 55% under Modi (2014–2024); economy advanced from 9th to 5th largest globally. ADR reports BJP as the largest net beneficiary of party-switching MPs between 2014–2021. BTI 2026 documents democratic backsliding, use of investigative agencies against opposition, and anti-minority rhetoric by senior leaders. Farm laws were repealed following sustained mass protest.",
+   pros:["GDP per capita growth of 55% (2014–2024)","Jal Jeevan Mission and PM Awas scheme reach","Strongest electoral performance nationally","Infrastructure investment scale"],
+   cons:["₹6,060 crore in corporate electoral bonds","Largest beneficiary of political defections (ADR)","BTI 2026: democratic institution erosion","Farm law reversal after mass protest","Anti-minority rhetoric documented by senior leaders","39% of winning MPs have declared criminal cases"]},
+
+  {name:"Indian National Congress",abbr:"INC",type:"national",
+   scores:{governance:5.5,peoplefirst:5.2,transparency:5.0,criminal:4.5,electoral:5.5,leadership:4.5,hopping:4.0,ideology:6.0,representation:6.5,manifesto:6.0,digital:5.5},
+   pf:{corp:7,nature:6,rights:8,farmer:7,ecology:6,rfreebie:7},
+   criminalPct:49,hoppingRisk:"High",bondsCr:1422,
+   notes:"INC authored several landmark rights-based legislations: RTI (2005), RTE (2009), MGNREGA (2005), and the Forest Rights Act (2006). ₹1,422 crore received in electoral bonds. 49% of 99 elected MPs in 2024 have declared criminal cases — highest percentage among major parties. ADR documents 222 candidates leaving INC between 2014–2021. Rahul Gandhi's 2024 campaign was explicitly anti-corporate in messaging. Dynastic leadership and absence of internal party elections remain structural weaknesses.",
+   pros:["RTI, RTE, MGNREGA — structural rights legislation","Explicit anti-corporate positioning in 2024 campaign","Broader demographic inclusion record","2024 electoral recovery (99 seats from 52)"],
+   cons:["₹1,422 crore in corporate electoral bonds","49% of elected MPs with declared criminal cases","222 candidates defected 2014–2021 (ADR)","Dynastic leadership structure","UPA-era corruption scandals"]},
+
+  {name:"Aam Aadmi Party",abbr:"AAP",type:"national",
+   scores:{governance:6.2,peoplefirst:6.0,transparency:5.0,criminal:7.0,electoral:5.5,leadership:4.5,hopping:6.5,ideology:6.5,representation:6.0,manifesto:7.0,digital:7.5},
+   pf:{corp:8,nature:5,rights:8,farmer:5,ecology:5,rfreebie:6},
+   criminalPct:30,hoppingRisk:"Low-Med",bondsCr:0,
+   notes:"Delhi's education budget tripled under AAP; government school board pass rates improved markedly. Mohalla Clinic model received international recognition. Zero electoral bond funding. However, Kejriwal was arrested in the liquor policy scam (2024) and Manish Sisodia faced similar charges. AAP lost Delhi in February 2025, ending a decade in power. CVC report flagged discrepancies in classroom construction claims. Delhi's air quality continued to deteriorate during AAP governance.",
+   pros:["Zero electoral bond funding","Education budget tripled in Delhi","Mohalla Clinic model recognised internationally","Low criminal candidate percentage (30%)"],
+   cons:["Kejriwal and Sisodia arrested in liquor scam","Lost Delhi 2025","CVC flagged classroom construction discrepancies","Delhi air quality worsened under tenure"]},
+
+  {name:"National People's Party",abbr:"NPP",type:"national",
+   scores:{governance:6.5,peoplefirst:6.8,transparency:6.5,criminal:7.0,electoral:5.0,leadership:6.0,hopping:6.5,ideology:5.5,representation:6.5,manifesto:5.5,digital:4.5},
+   pf:{corp:9,nature:8,rights:7,farmer:8,ecology:8,rfreebie:6},
+   criminalPct:28,hoppingRisk:"Low",bondsCr:0,
+   notes:"NPP governs Meghalaya with a community and tribal rights focus. Zero electoral bond receipts. Good forest and ecology protection record. No major corruption scandals on record. Low criminal candidate percentage. Limited to Northeast India in political scope.",
+   pros:["Zero corporate bond funding","Tribal and community rights focus","Good ecology and forest protection record","Clean candidate record (28%)"],
+   cons:["Very limited national scope","Small voter base","Dependent on NDA coalition at centre"]},
+
+  {name:"Bahujan Samaj Party",abbr:"BSP",type:"national",
+   scores:{governance:4.5,peoplefirst:4.8,transparency:4.5,criminal:5.5,electoral:3.0,leadership:3.5,hopping:5.0,ideology:6.5,representation:8.0,manifesto:5.0,digital:3.0},
+   pf:{corp:7,nature:5,rights:8,farmer:5,ecology:4,rfreebie:5},
+   criminalPct:40,hoppingRisk:"Medium",bondsCr:0,
+   notes:"BSP's foundational ideology — Ambedkarite social justice — is inherently rights-based and people-first. Zero electoral bond funding. However, the party won zero Lok Sabha seats in 2024. BSP's last state government (UP, 2007–2012) produced mixed outcomes. Mayawati's absolute control over the party eliminates internal democracy. BSP declared 100% of its 2014–15 income from unknown sources (₹111.96 crore).",
+   pros:["Ambedkarite social justice ideology","Zero corporate bond funding","Dalit rights as structural entitlement","Strong representation record historically"],
+   cons:["Zero Lok Sabha seats in 2024","No internal party democracy","100% income from undisclosed sources (2014–15)","No governance record since 2012"]},
+
+  // STATE
+  {name:"Naam Tamilar Katchi",abbr:"NTK",type:"state",
+   scores:{governance:2.5,peoplefirst:9.2,transparency:7.0,criminal:8.8,electoral:3.5,leadership:4.0,hopping:9.5,ideology:8.5,representation:9.5,manifesto:9.0,digital:7.5},
+   pf:{corp:20,nature:17,rights:19,farmer:17,ecology:15,rfreebie:9},
+   criminalPct:12,hoppingRisk:"None",bondsCr:0,
+   notes:"NTK received ECI state party recognition in May 2025 following an 8.2% vote share in the 2024 Lok Sabha elections. The party has contested all elections independently since 2016, without forming any pre-poll alliance. It allocates 50% of candidate seats to women across all elections and fielded the first transgender candidate in Tamil Nadu's assembly elections (2016). The 2026 manifesto (462 pages) proposes declaring farming a national occupation, district-level cold storage infrastructure, large-scale water body restoration using traditional methods, free education from primary to PhD as a constitutional right, and a zero-waste industrial model informed by the South Korean waste management framework. The party has led documented protests against illegal sand mining in Tamil Nadu's riverbeds, against the Chennai-Salem expressway on ecological grounds (the Madras High Court subsequently quashed the land acquisition order), and for Kaveri water rights. Zero electoral bond funding recorded. NTK explicitly supports the Supreme Court's anti-bond ruling in its 2026 manifesto. However, the party has never won a single legislative seat in any election since 2010, which materially limits its governance score (18% of overall weight). Party leader Seeman has over 70 FIRs registered against him, primarily from speech-related cases; a serious rape FIR was settled out-of-court in 2025 with Seeman issuing an unconditional apology. The party's glorification of LTTE leader Velupillai Prabhakaran and support for Tamil Eelam remain internationally controversial positions.",
+   pros:["Zero electoral bond funding; explicitly opposes the scheme in 2026 manifesto","50% women candidates in every election since 2016 — highest consistent rate in India","Zero pre-poll alliances since inception; full electoral independence","Active protests against illegal sand mining in Tamil Nadu","Led successful Madras HC challenge against Chennai-Salem expressway on ecology grounds","Free education (primary to PhD) as a constitutional right — rights-based, not freebie","Farming proposed as a national occupation with cold storage and water restoration infrastructure","Lowest declared criminal candidate percentage among all Tamil Nadu parties (~12%)","462-page detailed 2026 manifesto with water, ecology, agriculture, and governance frameworks","Consistent vote share growth: 1.1% (2016) → 3.9% (2019) → 6.7% (2021) → 8.2% (2024)"],
+   cons:["No legislative seat won in any election since party's 2010 revival","Governance score severely capped (2.5/10) — no delivery record possible without electoral wins","Party leader carries 70+ registered FIRs","Serious FIR (rape under promise) settled out-of-court; leader issued unconditional apology","Support for Tamil Eelam and glorification of LTTE's Prabhakaran — internationally contested","Support for release of Rajiv Gandhi assassination convicts is a nationally divisive position","Tamil-only CM advocacy has been criticised as exclusionary"]},
+
+  {name:"Biju Janata Dal",abbr:"BJD",type:"state",
+   scores:{governance:7.0,peoplefirst:6.2,transparency:6.0,criminal:6.5,electoral:6.5,leadership:6.5,hopping:7.0,ideology:6.0,representation:6.5,manifesto:6.0,digital:5.5},
+   pf:{corp:8,nature:8,rights:7,farmer:8,ecology:7,rfreebie:6},
+   criminalPct:25,hoppingRisk:"Low",bondsCr:861,
+   notes:"BJD governed Odisha for 24 years under Naveen Patnaik. Odisha ranked first in NITI Aayog's Fiscal Health Index. BJD pioneered women's reservation at 50% in panchayats. Strong disaster management record. ₹861 crore in electoral bonds received. Lost power in 2024 — party's over-dependence on a single leader was exposed.",
+   pros:["NITI Aayog fiscal health topper","50% women panchayat reservation","Strong disaster management record","Low criminal candidate percentage (25%)"],
+   cons:["₹861 crore in corporate electoral bonds","Lost power 2024","Party lacks organisational depth beyond Patnaik"]},
+
+  {name:"Jharkhand Mukti Morcha",abbr:"JMM",type:"state",
+   scores:{governance:5.5,peoplefirst:6.8,transparency:5.0,criminal:5.5,electoral:6.0,leadership:5.5,hopping:5.5,ideology:6.5,representation:7.0,manifesto:5.5,digital:4.0},
+   pf:{corp:9,nature:8,rights:8,farmer:8,ecology:8,rfreebie:6},
+   criminalPct:35,hoppingRisk:"Low-Med",bondsCr:0,
+   notes:"JMM's founding ideology centres on tribal land and forest rights — inherently people-first. Zero electoral bond funding. Hemant Soren was arrested but subsequently returned to power. JMM won re-election in 2024. Jharkhand remains low on HDI indicators despite natural resource wealth.",
+   pros:["Tribal land and forest rights as core ideology","Zero corporate bond funding","Re-elected 2024 with clear mandate","Forest rights advocacy record"],
+   cons:["Jharkhand remains low HDI despite resource wealth","Corruption allegations against leadership","Limited state governance capacity"]},
+
+  {name:"All India Trinamool Congress",abbr:"TMC",type:"state",
+   scores:{governance:5.0,peoplefirst:4.5,transparency:3.5,criminal:3.5,electoral:7.5,leadership:6.0,hopping:4.5,ideology:5.0,representation:6.0,manifesto:5.5,digital:6.5},
+   pf:{corp:3,nature:4,rights:6,farmer:5,ecology:4,rfreebie:6},
+   criminalPct:45,hoppingRisk:"High",bondsCr:1609,
+   notes:"TMC received ₹1,609 crore in electoral bonds — second highest nationally. West Bengal leads India in elected legislators with declared crimes against women (ADR). Narada sting operation, Saradha chit fund, and cattle/coal scam allegations are documented. 45% of TMC's elected MPs carry criminal cases. Post-poll violence in West Bengal has been repeatedly flagged by election observers. Mamata Banerjee remains a strong federalism and opposition voice.",
+   pros:["Mamata Banerjee's mass appeal and state control","Champion of federalism against Centre","Some welfare scheme delivery reach"],
+   cons:["₹1,609 crore in corporate bonds","45% MPs with criminal cases","West Bengal leads nation in women-crime lawmakers (ADR)","Multiple documented corruption cases","Post-poll violence record"]},
+
+  {name:"Dravida Munnetra Kazhagam",abbr:"DMK",type:"state",
+   scores:{governance:6.8,peoplefirst:5.2,transparency:5.5,criminal:4.0,electoral:7.8,leadership:7.0,hopping:6.0,ideology:7.0,representation:7.0,manifesto:7.0,digital:7.5},
+   pf:{corp:5,nature:5,rights:7,farmer:6,ecology:5,rfreebie:7},
+   criminalPct:59,hoppingRisk:"Low-Med",bondsCr:639,
+   notes:"DMK received ₹639 crore in electoral bonds. 59% of DMK's 22 elected MPs have declared criminal cases — the highest percentage among all major parties. Tamil Nadu's development indices are strong under DMK governance. Sand mining continues to be documented in Tamil Nadu during DMK's tenure. M.K. Stalin is regarded as a competent and modern leader with a strong digital communication record.",
+   pros:["Tamil Nadu strong in HDI and development indices","Dravidian social welfare legacy","Modern governance approach under Stalin"],
+   cons:["₹639 crore in corporate bonds","59% MPs with criminal cases — highest among majors","Sand mining documented under DMK tenure","Freebie-heavy electoral positioning"]},
+
+  {name:"Janata Dal (United)",abbr:"JD(U)",type:"state",
+   scores:{governance:5.5,peoplefirst:4.0,transparency:4.5,criminal:5.0,electoral:6.5,leadership:5.5,hopping:2.5,ideology:5.0,representation:5.5,manifesto:5.0,digital:4.0},
+   pf:{corp:5,nature:4,rights:5,farmer:5,ecology:4,rfreebie:5},
+   criminalPct:45,hoppingRisk:"Very High",bondsCr:0,
+   notes:"Nitish Kumar switched alliances between NDA and the INDIA bloc multiple times between 2015 and 2024 — the most documented case of repeated opportunistic realignment among sitting Chief Ministers in the reference period. Bihar remains among India's lowest-HDI states. Some crime rate improvement is credited to Nitish Kumar's administration, but no structural rights-based governance transformation is recorded.",
+   pros:["Some measurable crime reduction in Bihar","Backward class representation voice"],
+   cons:["Multiple alliance switches for power — most documented case in period","Bihar remains bottom-tier on HDI","No rights-based governance transformation","45% criminal candidate percentage"]},
+
+  {name:"Telugu Desam Party",abbr:"TDP",type:"state",
+   scores:{governance:6.5,peoplefirst:4.8,transparency:5.5,criminal:5.0,electoral:7.5,leadership:6.5,hopping:5.5,ideology:5.5,representation:6.0,manifesto:6.0,digital:6.5},
+   pf:{corp:5,nature:4,rights:6,farmer:5,ecology:4,rfreebie:6},
+   criminalPct:50,hoppingRisk:"Medium",bondsCr:0,
+   notes:"TDP won 16 Lok Sabha seats in 2024 in a strong electoral comeback. Chandrababu Naidu's track record in technology-led governance is documented. 50% of elected MPs carry declared criminal cases. Illegal sand mining in Andhra Pradesh has been documented under NDA-aligned governance in 2025. Periodic alliance switching with both NDA and INDIA blocs.",
+   pros:["Chandrababu Naidu's technology governance record","Strong 2024 electoral comeback","Infrastructure development track record"],
+   cons:["50% MPs with criminal cases","Sand mining scam allegations documented in AP (2025)","Periodic alliance switching"]},
+
+  {name:"Samajwadi Party",abbr:"SP",type:"state",
+   scores:{governance:4.5,peoplefirst:4.2,transparency:4.0,criminal:3.5,electoral:7.0,leadership:5.5,hopping:4.0,ideology:5.5,representation:5.5,manifesto:5.0,digital:6.0},
+   pf:{corp:5,nature:4,rights:5,farmer:5,ecology:4,rfreebie:5},
+   criminalPct:45,hoppingRisk:"High",bondsCr:0,
+   notes:"SP won 37 Lok Sabha seats in 2024 — a strong performance. However, UP under SP governance had documented high crime rates, communal incidents, and sand mafia political links. 45% of elected MPs have declared criminal cases, with 46% having serious charges. Akhilesh Yadav has worked to modernise the party's public image.",
+   pros:["Strong 2024 electoral performance (37 seats)","OBC community representation","Akhilesh's modernising effort"],
+   cons:["45% MPs with declared criminal cases","Sand mafia links documented under SP UP governance","High communal incident record during SP tenure","Family leadership disputes"]},
+
+  {name:"Bharat Rashtra Samithi",abbr:"BRS",type:"state",
+   scores:{governance:5.5,peoplefirst:4.0,transparency:4.0,criminal:5.0,electoral:3.5,leadership:4.5,hopping:5.5,ideology:5.0,representation:5.0,manifesto:5.0,digital:5.5},
+   pf:{corp:3,nature:4,rights:5,farmer:6,ecology:4,rfreebie:6},
+   criminalPct:38,hoppingRisk:"Low-Med",bondsCr:1806,
+   notes:"BRS received ₹1,806 crore in electoral bonds — the highest among all regional parties. The KaLeSHwaram irrigation project, a flagship BRS initiative, faces documented cost overruns and corruption allegations. The Rythu Bandhu farmer income support scheme had genuine reach. BRS lost power in Telangana decisively in December 2023.",
+   pros:["Rythu Bandhu farmer income support scheme","Hyderabad's IT infrastructure partly credited to TRS/BRS era"],
+   cons:["₹1,806 crore corporate bonds — highest regional party","KaLeSHwaram project corruption allegations","Lost power decisively in 2023","KCR family dynasty control"]},
+
+  {name:"All India Anna Dravida Munnetra Kazhagam",abbr:"AIADMK",type:"state",
+   scores:{governance:5.5,peoplefirst:4.5,transparency:4.5,criminal:5.5,electoral:4.5,leadership:4.0,hopping:5.0,ideology:5.5,representation:5.5,manifesto:5.5,digital:4.0},
+   pf:{corp:6,nature:5,rights:6,farmer:5,ecology:5,rfreebie:7},
+   criminalPct:32,hoppingRisk:"Medium",bondsCr:0,
+   notes:"AIADMK's welfare record under Jayalalithaa is historically significant. No major electoral bond receipts documented. Leadership crisis following Jayalalithaa's death has split the party. Tamil Nadu development indices were strong under AIADMK governance. Sand mining continued in Tamil Nadu across party governments.",
+   pros:["Jayalalithaa welfare scheme legacy","Moderate criminal candidate record (32%)","No major corporate bond receipts"],
+   cons:["Leadership vacuum post-Jayalalithaa","Factional split reduces organisational coherence","Sand mining continued under AIADMK tenure"]},
+
+  {name:"Rashtriya Janata Dal",abbr:"RJD",type:"state",
+   scores:{governance:3.5,peoplefirst:4.5,transparency:3.5,criminal:3.0,electoral:5.5,leadership:4.5,hopping:4.5,ideology:5.0,representation:6.5,manifesto:4.0,digital:4.5},
+   pf:{corp:7,nature:4,rights:6,farmer:5,ecology:3,rfreebie:6},
+   criminalPct:55,hoppingRisk:"Medium",bondsCr:0,
+   notes:"RJD's governance period in Bihar was documented by the press and judiciary as a period of severe lawlessness — referred to as 'jungle raj.' Lalu Prasad Yadav was convicted in the fodder scam. Bihar remains among India's lowest-HDI states. Zero electoral bond funding. Tejashwi Yadav has made efforts to modernise the party's public positioning.",
+   pros:["Zero corporate bond funding","OBC and Dalit representation ideology","Tejashwi Yadav's modernising public positioning"],
+   cons:["'Jungle raj' governance record in Bihar","Lalu Prasad convicted in fodder scam","~55% MPs with declared criminal cases","Bihar remains lowest-tier on all development indices"]},
+
+  {name:"Shiv Sena (Shinde faction)",abbr:"SS(S)",type:"state",
+   scores:{governance:4.5,peoplefirst:3.2,transparency:3.5,criminal:3.0,electoral:5.0,leadership:4.0,hopping:2.0,ideology:4.0,representation:4.5,manifesto:4.5,digital:5.0},
+   pf:{corp:4,nature:3,rights:4,farmer:4,ecology:3,rfreebie:5},
+   criminalPct:71,hoppingRisk:"Very High",bondsCr:0,
+   notes:"71% of Shiv Sena (Shinde)'s elected MPs carry declared criminal cases — the highest rate of any ECI-recognised party in the 2024 data. The party itself was formed via an engineered defection from Uddhav Thackeray's Shiv Sena, widely regarded as one of the most significant abuses of the anti-defection mechanism in recent political history. No coherent ideological evolution is documented beyond the split itself.",
+   pros:["Maharashtra coalition stability contribution"],
+   cons:["71% MPs with criminal cases — highest rate of any recognised party","Party formed through engineered defection","No distinct ideological position post-split","Lowest defection-integrity score in dataset"]},
+
+  {name:"All India Majlis-e-Ittehadul Muslimeen",abbr:"AIMIM",type:"state",
+   scores:{governance:4.5,peoplefirst:5.5,transparency:5.0,criminal:6.0,electoral:4.5,leadership:5.5,hopping:7.0,ideology:5.0,representation:7.5,manifesto:5.5,digital:5.5},
+   pf:{corp:9,nature:5,rights:8,farmer:4,ecology:4,rfreebie:6},
+   criminalPct:28,hoppingRisk:"Low",bondsCr:0,
+   notes:"AIMIM provides articulate representation of Muslim minority rights in Parliament. Zero electoral bond funding and no defection history. Asaduddin Owaisi's parliamentary interventions on rights issues are well-documented. The party is frequently accused by critics of acting as a vote-splitter that benefits BJP by dividing the anti-BJP vote in key constituencies.",
+   pros:["Minority rights representation in Parliament","Zero corporate bond funding","No defection history","Owaisi's consistent rights-based parliamentary record"],
+   cons:["Accused of splitting opposition vote, indirectly benefiting BJP","No governance track record","Very narrow electoral base"]},
+
+  {name:"Janata Dal (Secular)",abbr:"JD(S)",type:"state",
+   scores:{governance:5.0,peoplefirst:4.0,transparency:4.0,criminal:5.0,electoral:4.5,leadership:4.0,hopping:4.0,ideology:4.5,representation:5.0,manifesto:4.5,digital:4.0},
+   pf:{corp:6,nature:5,rights:5,farmer:6,ecology:4,rfreebie:5},
+   criminalPct:38,hoppingRisk:"High",bondsCr:0,
+   notes:"JD(S) operates primarily as a Vokkaliga-caste vehicle in Karnataka. H.D. Kumaraswamy's coalition government (2018–2019) lasted 14 months before collapsing through defections. The party switched alliance from Congress to NDA ahead of the 2024 elections. Deve Gowda family dynasty exercises near-total control.",
+   pros:["Some irrigation and water policy focus in Karnataka","Vokkaliga community representation"],
+   cons:["Repeated alliance switching across electoral cycles","Narrow single-caste identity base","Deve Gowda family dynasty","2018 coalition collapse via defections"]},
+
+  {name:"Shiromani Akali Dal",abbr:"SAD",type:"state",
+   scores:{governance:4.5,peoplefirst:5.2,transparency:4.0,criminal:5.5,electoral:4.0,leadership:4.0,hopping:5.5,ideology:6.0,representation:5.5,manifesto:5.0,digital:4.0},
+   pf:{corp:7,nature:6,rights:6,farmer:7,ecology:5,rfreebie:5},
+   criminalPct:35,hoppingRisk:"Low-Med",bondsCr:0,
+   notes:"SAD's decision to break its alliance with BJP over the farm laws in 2020 was a principled stand on farmer rights. Punjab's drug crisis (2012–2017) occurred during SAD's governance, representing a significant failure of public health and law enforcement. The party suffered a severe electoral collapse in 2022. Badal family dynasty control is documented.",
+   pros:["Principled split from BJP over farm laws","Sikh community champion","Farmer rights advocacy record"],
+   cons:["Punjab drug crisis under SAD governance (2012–2017)","Severe electoral collapse post-2022","Badal family dynasty control"]},
+
+  {name:"Naga People's Front",abbr:"NPF",type:"state",
+   scores:{governance:6.0,peoplefirst:6.5,transparency:5.5,criminal:6.5,electoral:5.5,leadership:5.5,hopping:6.5,ideology:6.5,representation:7.0,manifesto:5.5,digital:3.5},
+   pf:{corp:9,nature:8,rights:7,farmer:7,ecology:8,rfreebie:6},
+   criminalPct:22,hoppingRisk:"Low-Med",bondsCr:0,
+   notes:"NPF represents Naga community rights and has engaged consistently in peace process discussions. Zero corporate bond funding. Strong ecology and forest protection record in the Northeast. Low criminal candidate percentage. Limited national political scope.",
+   pros:["Naga community rights representation","Zero corporate bond funding","Good ecology and forest protection record","Peace process engagement","Low criminal candidate percentage (22%)"],
+   cons:["Very limited national political scope","Northeast-specific relevance only"]}
+];
+
+// ── WEIGHTS ──────────────────────────────────────────────────────────────────
+const W = {governance:.18,peoplefirst:.10,transparency:.13,criminal:.11,electoral:.10,leadership:.10,hopping:.08,ideology:.08,representation:.07,manifesto:.03,digital:.02};
+const PF_W = {corp:.20,nature:.18,rights:.20,farmer:.17,ecology:.15,rfreebie:.10};
+
+function pfScore(p){
+  const f=p.pf;
+  return Math.round((f.corp*PF_W.corp+f.nature*PF_W.nature+f.rights*PF_W.rights+f.farmer*PF_W.farmer+f.ecology*PF_W.ecology+f.rfreebie*PF_W.rfreebie)*10)/10;
+}
+function overallScore(p){
+  let t=0;
+  for(const [k,w] of Object.entries(W)) t+=p.scores[k]*w*10;
+  return Math.round(t*10)/10;
+}
+function sc(s){return s>=65?'var(--green)':s>=55?'var(--amber)':s>=42?'#f0883e':'var(--red)';}
+function pfc(s){return s>=80?'var(--green)':s>=65?'var(--accent)':s>=50?'var(--amber)':'var(--red)';}
+function barColor(v,max){const r=v/max;return r>=.75?'var(--green)':r>=.5?'var(--amber)':'var(--red)';}
+
+// ── PEOPLE-FIRST TABLE ────────────────────────────────────────────────────────
+function renderPFTable(type, bodyId){
+  const list = parties.filter(p=>p.type===type)
+    .map(p=>({...p,pfs:pfScore(p)}))
+    .sort((a,b)=>b.pfs-a.pfs);
+
+  const tbody = document.getElementById(bodyId);
+  tbody.innerHTML='';
+  list.forEach((p,i)=>{
+    const rank=i+1;
+    const rc=rank===1?'rank-1':rank===2?'rank-2':rank===3?'rank-3':'rank-other';
+    const topRow = rank===1?'top-row':'';
+    const col=pfc(p.pfs);
+    const miniBar=(v,max)=>`<div style="margin-top:3px;height:4px;background:#21262d;border-radius:2px;overflow:hidden;"><div style="width:${(v/max)*100}%;height:100%;background:${barColor(v,max)};border-radius:2px;"></div></div>`;
+    tbody.innerHTML+=`
+      <tr class="${topRow}">
+        <td><span class="rank-badge ${rc}">${rank}</span></td>
+        <td>
+          <div style="font-weight:600;color:var(--text);">${p.abbr}</div>
+          <div style="font-size:.63rem;color:var(--text3);margin-top:2px;">${p.name.length>34?p.name.slice(0,34)+'…':p.name}</div>
+        </td>
+        <td><div style="font-size:.76rem;text-align:center;font-weight:600;color:var(--text);">${p.pf.corp}/20</div>${miniBar(p.pf.corp,20)}</td>
+        <td><div style="font-size:.76rem;text-align:center;font-weight:600;color:var(--text);">${p.pf.nature}/18</div>${miniBar(p.pf.nature,18)}</td>
+        <td><div style="font-size:.76rem;text-align:center;font-weight:600;color:var(--text);">${p.pf.rights}/20</div>${miniBar(p.pf.rights,20)}</td>
+        <td><div style="font-size:.76rem;text-align:center;font-weight:600;color:var(--text);">${p.pf.farmer}/17</div>${miniBar(p.pf.farmer,17)}</td>
+        <td><div style="font-size:.76rem;text-align:center;font-weight:600;color:var(--text);">${p.pf.ecology}/15</div>${miniBar(p.pf.ecology,15)}</td>
+        <td><div style="font-size:.76rem;text-align:center;font-weight:600;color:var(--text);">${p.pf.rfreebie}/10</div>${miniBar(p.pf.rfreebie,10)}</td>
+        <td>
+          <div class="score-bar">
+            <div class="bar-bg"><div class="bar-fill" style="width:${p.pfs}%;background:${col};"></div></div>
+            <span class="score-num" style="color:${col};text-shadow:0 0 12px ${col}50;">${p.pfs}</span>
+          </div>
+        </td>
+      </tr>`;
+  });
+}
+
+// ── OVERALL TABLE ─────────────────────────────────────────────────────────────
+let currentFilter='all';
+function filterTable(type,btn){
+  currentFilter=type;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderRankTable();
+}
+function renderRankTable(){
+  let list=parties.map(p=>({...p,overall:overallScore(p),pfs:pfScore(p)})).sort((a,b)=>b.overall-a.overall);
+  if(currentFilter!=='all') list=list.filter(p=>p.type===currentFilter);
+  const tbody=document.getElementById('rankTableBody');
+  tbody.innerHTML='';
+  list.forEach((p,i)=>{
+    const rank=i+1;
+    const rc=rank===1?'rank-1':rank===2?'rank-2':rank===3?'rank-3':'rank-other';
+    const oc=sc(p.overall); const pc=pfc(p.pfs);
+    tbody.innerHTML+=`
+      <tr>
+        <td><span class="rank-badge ${rc}">${rank}</span></td>
+        <td>
+          <div style="font-weight:600;color:var(--text);">${p.name}</div>
+          <div style="font-size:.67rem;color:var(--text3);margin-top:2px;">${p.abbr}</div>
+        </td>
+        <td><span class="party-type ${p.type}">${p.type==='national'?'National':'State'}</span></td>
+        <td><div class="score-bar"><div class="bar-bg"><div class="bar-fill" style="width:${p.overall}%;background:${oc};"></div></div><span class="score-num" style="color:${oc};text-shadow:0 0 12px ${oc}50;">${p.overall}</span></div></td>
+        <td><div class="score-bar"><div class="bar-bg"><div class="bar-fill" style="width:${p.pfs}%;background:${pc};"></div></div><span class="score-num" style="color:${pc};text-shadow:0 0 12px ${pc}50;">${p.pfs}</span></div></td>
+        <td><span style="font-weight:700;font-size:.8rem;color:${p.criminalPct>50?'var(--red)':p.criminalPct>35?'var(--amber)':'var(--green)'};">${p.criminalPct}%</span></td>
+        <td><span style="font-size:.74rem;font-weight:600;color:${p.hoppingRisk==='None'||p.hoppingRisk.includes('Low')?'var(--green)':p.hoppingRisk==='Medium'||p.hoppingRisk==='Low-Med'?'var(--amber)':'var(--red)'};">${p.hoppingRisk}</span></td>
+        <td><span style="font-size:.72rem;font-weight:600;color:${oc};">${p.overall>=65?'Satisfactory':p.overall>=55?'Mixed':p.overall>=42?'Poor':'Very Poor'}</span></td>
+      </tr>`;
+  });
+}
+
+// ── DETAIL CARDS ──────────────────────────────────────────────────────────────
+function renderCards(type){
+  const list=parties.filter(p=>p.type===type).map(p=>({...p,overall:overallScore(p)})).sort((a,b)=>b.overall-a.overall);
+  const container=document.getElementById(type==='national'?'nationalCards':'stateCards');
+  container.innerHTML='';
+  const mkeys=['governance','peoplefirst','transparency','criminal','hopping','ideology','representation'];
+  const mlbls={governance:'Governance',peoplefirst:'People-First',transparency:'Integrity',criminal:'Clean Record',hopping:'No Defection',ideology:'Ideology',representation:'Inclusion'};
+
+  list.forEach((p,i)=>{
+    const col=sc(p.overall);
+    const bars=mkeys.map(k=>{
+      const s=p.scores[k];
+      const bc=s>=7?'var(--green)':s>=5?'var(--amber)':'var(--red)';
+      const vc=s>=7?'var(--green)':s>=5?'var(--amber)':'var(--red)';
+      return`<div class="mini-bar-row">
+        <span class="mini-bar-label">${mlbls[k]}</span>
+        <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:${s*10}%;background:${bc};"></div></div>
+        <span class="mini-bar-val" style="color:${vc};">${s}</span>
+      </div>`;}).join('');
+    const pros=p.pros.slice(0,4).map(x=>`<span class="tag pos">${x}</span>`).join('');
+    const cons=p.cons.slice(0,4).map(x=>`<span class="tag neg">${x}</span>`).join('');
+    container.innerHTML+=`
+      <div class="party-card" id="card-${p.abbr}" onclick="toggleCard('${p.abbr}')">
+        <div class="party-card-header">
+          <div>
+            <div class="party-name">${i+1}. ${p.name}</div>
+            <div class="party-meta">
+              <span class="party-meta-chip">${p.abbr}</span>
+              <span class="party-meta-chip" style="color:${p.criminalPct>50?'var(--red)':p.criminalPct>35?'var(--amber)':'var(--green)'};">Criminal ${p.criminalPct}%</span>
+              <span class="party-meta-chip" style="color:${p.hoppingRisk==='None'||p.hoppingRisk.includes('Low')?'var(--green)':p.hoppingRisk==='Medium'||p.hoppingRisk==='Low-Med'?'var(--amber)':'var(--red)'};">${p.hoppingRisk} defection risk</span>
+            </div>
+          </div>
+          <div class="overall-score" style="color:${col};text-shadow:0 0 20px ${col}40;">${p.overall}</div>
+        </div>
+        <div class="mini-bars">${bars}</div>
+        <div class="expand-section" id="exp-${p.abbr}">
+          <p>${p.notes}</p>
+          <div style="margin-top:8px;">${pros}</div>
+          <div style="margin-top:5px;">${cons}</div>
+        </div>
+      </div>`;
+  });
+}
+
+// ── BOND BARS ─────────────────────────────────────────────────────────────────
+function renderBondBars(){
+  const data=[
+    {n:'BJP',v:6060},{n:'BRS',v:1806},{n:'TMC',v:1609},{n:'INC',v:1422},
+    {n:'BJD',v:861},{n:'DMK',v:639},{n:'AIADMK',v:60},{n:'TDP',v:25},
+    {n:'NTK',v:0},{n:'CPI(M)',v:0},{n:'JMM',v:0},{n:'NPP',v:0},
+    {n:'AAP',v:0},{n:'BSP',v:0},{n:'RJD',v:0},{n:'SAD',v:0},
+    {n:'SP',v:0},{n:'AIMIM',v:0},{n:'NPF',v:0},
+  ].sort((a,b)=>b.v-a.v);
+  const max=6060;
+  document.getElementById('bondBars').innerHTML=data.map(d=>`
+    <div class="bond-row">
+      <span class="bond-party">${d.n}</span>
+      <div class="bond-bg">
+        <div class="bond-fill" style="width:${d.v===0?0:(d.v/max)*100}%;height:100%;background:${d.v===0?'transparent':d.v>3000?'linear-gradient(90deg,#ff3b4d,#ff7060)':d.v>1000?'linear-gradient(90deg,#f08030,#ffb060)':'linear-gradient(90deg,#e3a020,#ffd060)'};border-radius:6px;"></div>
+      </div>
+      <span class="bond-val" style="color:${d.v===0?'var(--green)':d.v>3000?'var(--red)':'var(--amber)'};">${d.v===0?'₹0 — Not a recipient':'₹'+d.v.toLocaleString()+' crore'}</span>
+    </div>`).join('');
+}
+
+// ── UTILS ─────────────────────────────────────────────────────────────────────
+function toggleCard(abbr){
+  document.getElementById(`exp-${abbr}`).classList.toggle('show');
+  document.getElementById(`card-${abbr}`).classList.toggle('expanded');
+}
+function showTab(tab,el){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  el.classList.add('active');
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+renderPFTable('state','pfStateBody');
+renderPFTable('national','pfNationalBody');
+renderRankTable();
+renderCards('national');
+renderCards('state');
+renderBondBars();
+</script>
+</body>
+</html>
